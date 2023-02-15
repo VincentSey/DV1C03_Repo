@@ -28,7 +28,7 @@ pipeline {
           steps{
             echo "Running the Security test _ _ _ Completes"
            }
-          }
+           }
           }
           }
     environment {
