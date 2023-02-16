@@ -1,17 +1,17 @@
 pipeline {
     agent any
     stages {
-        stage('One'){
+        stage('Stage1_22053098'){
         steps{
            echo "S1_22053098: Environment Preparation Completed"
         }
         }
-        stage('Two') {
+        stage('Stage2_22053098') {
         steps{ 
            echo "S2_22053098: Web Server Creation Completed"
         }
         }
-        stage('Three'){
+        stage('Stage3_22053098'){
         parallel {
               stage('APi Test1') {
              steps{
@@ -31,7 +31,7 @@ pipeline {
              }
              }
              }
-        stage('Four')
+        stage('Stage4_22053098')
         parallel {
               stage('Dast Test1){
              steps{
@@ -51,12 +51,12 @@ pipeline {
               }
               }
               }
-         stage('Five'){
+         stage('Stage5_22053098'){
          steps{
            Prompt: S5_22053098 - Do you want to release the work?
          }
          }
-         stage('Six'){
+         stage('Stage6_22053098'){
          steps{
            If Proceed, echo "Work Released -S6_22053098"
              else {
