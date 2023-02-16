@@ -6,8 +6,10 @@ pipeline {
            echo "S1_22053098: Environment Preparation Completed"
         }
         }
-        stage('Stage2_22053098') {
+        stage('Stage2_22053098'){
         steps{ 
+          docker run -d -it -p 42000:8080 --name=s2_22053098_server 22053098_webimage /bin/sh
+          docker rm -f s2_22053098_servr
            echo "S2_22053098: Web Server Creation Completed"
         }
         }
@@ -18,39 +20,18 @@ pipeline {
                 echo "S3_22053098: API Test Completed"
              }
              }
-             stage('Security Test'){
-              agent{
-                docker{
-                    reuseNode true
-                    image 'ubuntu:18.04'
-                }
-             }
-             steps{
-                echo "Running the Security test _ _ _ Completes"
-                }
-             }
-             }
-             }
-        stage('Stage4_22053098')
+           }
+           }
+        stage('Stage4_22053098'){
         parallel {
               stage('Dast Test1){
              steps{
                 echo "S4_22053098: DAST Security Test Completed"
              }
              }
-             stage('Security Test'){
-              agent{
-                docker{
-                    reuseNode true
-                    image 'ubuntu:18.04'
-                }
-              }
-              steps{
-                 echo "Running the Security test _ _ _ Completes"
-                 }
-              }
-              }
-              }
+             
+            }
+            }
          stage('Stage5_22053098'){
          steps{
            Prompt: S5_22053098 - Do you want to release the work?
@@ -65,5 +46,5 @@ pipeline {
           }
       }
     }  
-      
-   
+   }   
+   }
