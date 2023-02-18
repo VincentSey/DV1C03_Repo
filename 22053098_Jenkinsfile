@@ -1,7 +1,7 @@
 pipeline {
     agent {
        node {
-          label 'main'
+          label 'master'
     stages {
         stage('Stage1_22053098'){
         steps{
