@@ -21,15 +21,11 @@ pipeline {
                 echo "S3_22053098: API Test Completed"
              }
              }
-           }
-           }
         stage('Stage4_22053098'){
-        parallel {
-              stage('Dast Test1){
-             steps{
+           steps {
                 echo "S4_22053098: DAST Security Test Completed"
-             }
-             }
+              }
+              }
              
             }
             }
