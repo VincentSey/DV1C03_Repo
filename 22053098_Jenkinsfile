@@ -1,9 +1,12 @@
 pipeline {
-    agent any
+    agent {
+       node {
+          label 'main'
     stages {
         stage('Stage1_22053098'){
         steps{
            echo "S1_22053098: Environment Preparation Completed"
+        }
         }
         }
         stage('Stage2_22053098'){
@@ -42,5 +45,7 @@ pipeline {
           }
           }
       }
-    }  
-
+      }  
+    }
+    }
+    }
