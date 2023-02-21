@@ -24,7 +24,7 @@ pipeline {
               }   
               stage('Stage4_22053098') {
                  steps {
-                    echo "S4_22053098 : FileTest Completed"
+                    echo "S4_22053098 : Dast Security Test Completed"
                  } 
               }  
           }
