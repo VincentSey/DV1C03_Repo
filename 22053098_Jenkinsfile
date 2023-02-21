@@ -1,6 +1,7 @@
 pipeline {
-    agent any
-
+    agent  {
+       node  {
+         label 'master'
     stages {
        stage('Stage1_22053098') {
            steps {
@@ -23,7 +24,7 @@ pipeline {
               }   
               stage('Stage4_22053098') {
                  steps {
-                    echo "S4_22053098 : Dast Security Test Completed"
+                    echo "S4_22053098 : FileTest Completed"
                  } 
               }  
           }
