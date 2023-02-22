@@ -36,8 +36,12 @@ pipeline {
        
        stage('Stage6_22053098'){
            steps{
-                 echo "Work Released - 22053098"  
-           }
+                If Proceed, echo "Work Released - 22053098"  
+                else {
+                   Abort {
+                      }
+                          }
+           }              
        }
     }
 }
