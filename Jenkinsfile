@@ -40,7 +40,7 @@ pipeline {
                 else {
                    Abort {
                       }
-                          }
+                  }
            }              
        }
     }
